@@ -1,0 +1,80 @@
+/**
+ * 
+ *//**
+ * 
+ */
+
+function getDetails(){
+	jQuery.ajax({
+        url: "http://localhost:8080/sensor_service/rest/sensors/" + $("#id").val(),
+        type: "GET",
+        contentType: "application/json",  
+        dataType:'json',
+        success: function(data, textStatus, errorThrown) {
+            //here is your json.
+              // process it
+        	  $("#floorNum").text(data.floorNum);
+        	  $("#roomNum").text(data.roomNum);
+        	  $("#smokeLevel").text(data.smokeLevel);
+        	  $("#cLevel").text(data.cLevel);
+
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+        		$("#floorNum").text("");
+        		$("#roomNum").text("");
+        		$("#smokeLevel").text("");
+        		$("#cLevel").text("");
+        },
+        timeout: 120000,
+    });
+};
+
+//POSTDETAILS USING AJAX
+function postDetails() {
+	
+	//Getting the sensorDetails
+	const sensorData = {
+			"sensorId": $("#getId").val(),
+			"floorNum": $("#getFloorNum").val(),
+			"roomNum": $("#getRoomNum").val(),
+			"smokeLevel" : $("#getSmokeLevel").val(),
+			"cLevel" : $("#getCLevel").val()
+		};
+	
+	
+	$.ajax({
+		url: "http://localhost:8080/sensor_service/rest/sensors/",
+		type: "POST",
+		data: JSON.stringify(sensorData),			
+		contentType: "application/json",
+		dataType: "json",
+        success: function(data, textStatus, errorThrown) {
+        	  $("#response").text("Sensor Added Successfully");
+
+        },
+        error : function(jqXHR, textStatus, errorThrown) {
+        		alert(errorThrown).text("Error");
+        },
+        timeout: 120000,
+		
+	});
+};
+
+//
+//Delete a particular book
+function deleteBook() {
+	
+	$.ajax({
+		url: "http://localhost:8080/sensor_service/rest/sensors/" + $("#senId").val(),
+		type: "DELETE",
+		contentType: "application/json",
+		dataType: "json",
+		success: function(data, textStatus, errorThrown) {
+			$("#deleteResponse").text("Sensor Deleted Successfully");
+		},
+		
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert("The particular Sensor was not found");
+		}
+	});
+}

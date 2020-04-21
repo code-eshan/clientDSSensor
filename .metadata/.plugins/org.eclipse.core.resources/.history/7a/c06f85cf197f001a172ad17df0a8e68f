@@ -1,0 +1,42 @@
+package sensorservice;
+
+public class Sensor {
+
+	private boolean sensorStatus;
+	private int floorNum;
+	private int roomNum;
+	private int smokeLevel;
+	private int cLevel;
+	public boolean isSensorStatus() {
+		return sensorStatus;
+	}
+	public void setSensorStatus(boolean sensorStatus) {
+		this.sensorStatus = sensorStatus;
+	}
+	public int getFloorNum() {
+		return floorNum;
+	}
+	public void setFloorNum(int floorNum) {
+		this.floorNum = floorNum;
+	}
+	public int getRoomNum() {
+		return roomNum;
+	}
+	public void setRoomNum(int roomNum) {
+		this.roomNum = roomNum;
+	}
+	public int getSmokeLevel() {
+		return smokeLevel;
+	}
+	public void setSmokeLevel(int smokeLevel) {
+		this.smokeLevel = smokeLevel;
+	}
+	public int getcLevel() {
+		return cLevel;
+	}
+	public void setcLevel(int cLevel) {
+		this.cLevel = cLevel;
+	}
+	
+	
+}

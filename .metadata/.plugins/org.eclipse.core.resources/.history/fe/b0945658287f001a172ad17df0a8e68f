@@ -1,0 +1,53 @@
+package sensorservice;
+
+	public class Sensor {
+
+		private int sensorId;
+		private int floorNum;
+		private int roomNum;
+		private int smokeLevel;
+		private int cLevel;
+		
+		public Sensor(int sensorId, int floorNum, int roomNum, int smokeLevel, int cLevel) {
+			super();
+			this.sensorId = sensorId;
+			this.floorNum = floorNum;
+			this.roomNum = roomNum;
+			this.smokeLevel = smokeLevel;
+			this.cLevel = cLevel;
+		}
+		
+		public int getFloorNum() {
+			return floorNum;
+		}
+		public void setFloorNum(int floorNum) {
+			this.floorNum = floorNum;
+		}
+		public int getRoomNum() {
+			return roomNum;
+		}
+		public void setRoomNum(int roomNum) {
+			this.roomNum = roomNum;
+		}
+		public int getSmokeLevel() {
+			return smokeLevel;
+		}
+		public void setSmokeLevel(int smokeLevel) {
+			this.smokeLevel = smokeLevel;
+		}
+		public int getcLevel() {
+			return cLevel;
+		}
+		public void setcLevel(int cLevel) {
+			this.cLevel = cLevel;
+		}
+
+		public int getSensorId() {
+			return sensorId;
+		}
+
+		public void setSensorId(int sensorId) {
+			this.sensorId = sensorId;
+		}	
+	}
+

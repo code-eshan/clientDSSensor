@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sensor Client</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="sensor.js"></script>
+    </head>
+
+    <h2>Sensors Client</h2>
+ 	Sensor Id : <br/>
+	<input type="text" id="id" /> 
+	<button onclick="getDetails()">Details </button>
+	<div>
+	</div>
+    <p />
+        <h4>Floor Number</h4><div id="floorNum"></div>
+	<p />
+        <h4>Room Number</h4><div id="roomNum"></div>
+    <p />
+        <h4>Smoke Level</h4><div id="smokeLevel"></div>
+	<p />
+        <h4>CO2 Level</h4><div id="cLevel"></div>
+        
+        
+     <!--ADD A SENSOR -->
+    <div id="addSensor">
+    	<h1>Add a new sensor</h1>
+    	<p>Sensor id: <input type="number" id="getId"></p>
+        <p>Floor Number: <input type="number" id="getFloorNum"></p>
+        <p>Room Number: <input type="number" id="getRoomNum"></p>
+        <p>Smoke Level: <input type="number" id="getSmokeLevel"></p>
+        <p>CO2 Level: <input type="number" id="getCLevel"></p>
+        <button onclick="postDetails()">Enter </button>
+        
+        <div id="response"></div>
+    </div> 
+        
+</html>

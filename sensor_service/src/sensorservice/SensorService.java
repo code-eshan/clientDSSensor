@@ -1,0 +1,69 @@
+package sensorservice;
+
+import java.util.List;
+
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.NotFoundException;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+
+@Path("/sensors")
+public class SensorService {
+	
+	List<Sensor> sensors;
+	
+	public SensorService() {
+		sensors = Sensors.getSensors();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Sensor> getSensors() {
+		return sensors;
+	}
+	
+	@Path("{id}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Sensor getSensor(@PathParam("id") int id) {
+		  for(Sensor s : sensors) {
+			  if ( s.getSensorId() == id)
+				   return s;
+		  }
+		  // book with the given id is not found, so throw 404 error
+		  throw new NotFoundException(); 
+	}
+	
+	//Adding new sensors using POST method
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	public Sensor addSensor(Sensor newSensor) {
+			sensors.add(newSensor);
+			for (Sensor sensor : sensors) {
+			if (sensor.getSensorId() == newSensor.getSensorId())
+					return sensor;
+			}
+			// book with the given id is not found, so throw 404 error
+			  throw new NotFoundException(); 
+	}
+	
+	//deleting a particular book using DELETE method
+	@Path("{id}")
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	public Sensor deleteSensor(@PathParam("id") int id) {
+			for (Sensor sensor : sensors) {
+				if (sensor.getSensorId() == id) {
+					sensors.remove(sensor);
+					return sensor;
+				}
+			}
+				// book with the given id is not found, so throw 404 error
+				  throw new NotFoundException(); 
+	}	
+}

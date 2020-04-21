@@ -1,0 +1,24 @@
+package sensorservice;
+
+import java.util.ArrayList;
+
+public class Sensors {
+
+	private static ArrayList<Sensor> sensors = new ArrayList<>();
+	
+	static {
+		sensors.add(new Sensor(false,1,100,5,7));
+		sensors.add(new Sensor(false,1,101,7,9));
+	}
+	
+	//Add a sensor
+	public static void addSensor(Sensor sensor) {
+		sensors.add(sensor);
+	}
+	
+	//Delete a sensor
+	public static void deleteSensor(Sensor sensor) {
+		
+	}
+	
+}

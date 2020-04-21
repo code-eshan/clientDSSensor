@@ -1,0 +1,8 @@
+127.0.0.1 - - [14/Apr/2020:17:47:28 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:47:30 +0530] "GET /book_service/ HTTP/1.1" 200 1374
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:47:30 +0530] "GET /book_service/book.js HTTP/1.1" 200 1769
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:48:09 +0530] "GET /book_service/rest/books/3 HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:48:10 +0530] "GET /book_service/rest/books/3 HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:48:21 +0530] "POST /book_service/rest/books/ HTTP/1.1" 200 36
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:48:26 +0530] "GET /book_service/rest/books/3 HTTP/1.1" 200 36
+0:0:0:0:0:0:0:1 - - [14/Apr/2020:17:48:33 +0530] "DELETE /book_service/rest/books/3 HTTP/1.1" 200 36

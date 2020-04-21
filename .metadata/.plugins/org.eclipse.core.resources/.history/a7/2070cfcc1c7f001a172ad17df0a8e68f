@@ -1,0 +1,16 @@
+package sensorservice;
+
+import java.util.List;
+
+import javax.ws.rs.Path;
+
+@Path("/sensors")
+public class SensorService {
+	
+	List<Sensor> sensors;
+	
+	public SensorService() {
+		
+	}
+	
+}
